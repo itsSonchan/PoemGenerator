@@ -1,6 +1,4 @@
 function displayPoem(response) {
-  let poemField = document.querySelector("#poem-field");
-  poemField.innerHTML = "⌛️ Generating your poem...";
   new Typewriter("#poem-field", {
     strings: response.data.answer,
     autoStart: true,
@@ -15,6 +13,8 @@ function apiCall(topic) {
   let context = "You are funny and uplifting.";
   let apiUrl = `https://api.shecodes.io/ai/v1/generate?prompt=${prompt}&context=${context}&key=${apiKey}`;
   axios.get(apiUrl).then(displayPoem);
+  let poemField = document.querySelector("#poem-field");
+  poemField.innerHTML = "⌛️ Generating your poem...";
 }
 
 function getTopic(event) {

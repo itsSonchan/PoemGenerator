@@ -1,6 +1,6 @@
 function displayPoem(response) {
   let poemField = document.querySelector("#poem-field");
-  poemField.innerHTML = "Generating your poem...";
+  poemField.innerHTML = "⌛️ Generating your poem...";
   new Typewriter("#poem-field", {
     strings: response.data.answer,
     autoStart: true,
